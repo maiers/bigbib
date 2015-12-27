@@ -1,0 +1,177 @@
+/* 
+    Document   : app
+    Created on : 29.12.2013, 20:43:27
+    Author     : Sebastian
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.top-buffer { margin-top:20px; }
+
+#copypaste {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border: 1px dashed #ddd;
+}
+
+.floating.pagination {
+    position: fixed;
+    z-index: 5;
+    bottom: 0px;
+    right: 10px;
+}
+
+.floating.actions {
+    position: fixed;
+    z-index: 5;
+    top: 60px;
+    right: 10px;
+}
+
+.publication .authors {
+    font-style: italic;
+}
+
+.publication .year {
+    font-style: italic;
+}
+
+.publication .title {
+    font-weight: bold;
+}
+
+.publication .abstract {
+    font-style: italic;
+    color: #888;
+    margin-top: 1em;
+    margin-left: 2em;
+    padding: 5px;
+    border-left: .3em solid #888;
+    min-height: 2em;
+}
+
+.pub-list-single .publication div {
+    display: inline;
+}
+
+.pub-list-single .publication div.abstract {
+    display: none;
+}
+
+.pub-list-single .publication div + div {
+    margin-left: 5px;
+}
+
+.pub-list-multiple div.abstract:empty {
+    display: none;
+}
+
+li.publication:hover {
+    background: #eee;
+}
+
+li.publication {
+    cursor: pointer;
+}
+
+div.publication div.title {
+    font-size: 160%;
+}
+
+div.publication div.abstract {
+    
+    
+}
+
+#facets ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+#facets ul li {
+    position: relative;
+    padding: 0px;
+    margin: 1px 0px;
+    min-height: 6px;
+    cursor: pointer;
+}
+
+#facets ul li:hover {
+    background-color: #eee;
+}
+
+#facets ul li.selected {
+    background-color: #ddd;
+}
+
+#facets ul li div.bar {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: lightblue;
+    z-index: 1;
+}
+
+#facets ul li:hover div.bar {
+    background: lightskyblue;
+}
+
+#facets ul li.selected div.bar {
+    background: lightgreen;
+}
+
+#facets ul li div.text {
+    position: relative;
+    padding: 2px;
+    z-index: 2;
+    height: 1.6em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#facets ul.facet-year li div.text {
+    display: none;
+}
+
+#facets ul.facet-year li:nth-child(10n+1), #facets ul.facet-year li:first-child {
+    border-top: 1px solid #ccc;
+}
+
+#facets ul.facet-year li:nth-child(10n+1) div.text, #facets ul.facet-year li:first-child div.text {
+    display: block;
+    position: absolute;
+    right: 0px;    
+}
+
+/*
+ * pub.jsp
+ */
+
+#files ul.files li.filedrop {
+    border: 1px dashed #888;
+    padding: 2em;
+    vertical-align: middle;
+    text-align: center;
+    font-style: italic;
+}
+
+/*
+ * Diagrams
+ */
+ 
+ ul.diagram li {
+    line-height: 100%;
+    vertical-align: middle;
+    position: relative;
+    margin: 3px 0px;
+ }
+ 
+ ul.diagram li div.bar {
+     background: #ccc;
+     text-wrap: none;
+     white-space: nowrap;
+     padding: 6px 2px;
+ }

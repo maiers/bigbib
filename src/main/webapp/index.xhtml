@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/page.tpl.xhtml">
+
+            <ui:define name="title">
+                BigBib
+            </ui:define>
+
+            <ui:define name="content">
+
+                <script>
+                    var ctx = '#{request.contextPath}';
+                    var query = '<h:outputText value="#{param['query']}" />';
+                    
+                    $(document).ready(function() {
+                       listPublications(ctx, query);
+                    });
+                </script>
+                
+                <script src="inc/js/dropzone.js"></script>
+                <script src="inc/js/publications.js"></script>
+
+                <div class="container">
+
+                    <div id="facets" class="col-md-3">
+                        
+                    </div>        
+
+                    <div id="bibliography" class="col-md-9">
+
+                        <div class="row pub-list-navigator">
+                            <div class="btn-toolbar pull-right" role="toolbar">
+
+                                <div class="btn-group pub-pagesizer">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <span class="pub-pagesize">25</span> items per page <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">10</a></li>
+                                        <li><a href="#">25</a></li>
+                                        <li><a href="#">50</a></li>
+                                        <li><a href="#">100</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group pub-list-format">
+                                    <button type="button" class="btn btn-default" data-format="single"><span class="glyphicon glyphicon-list"></span> Oneline</button>
+                                    <button type="button" class="btn btn-default" data-format="multiple"><span class="glyphicon glyphicon-th-list"></span> Multiline</button>
+                                    <button type="button" class="btn btn-default" data-format="image"><span class="glyphicon glyphicon-th-large"></span> Images</button>                        
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row top-buffer">
+                            <ul class="list-group" id="publications">                   
+                            </ul>
+                        </div>
+
+                        <ul class="pagination floating"></ul>
+
+                    </div>
+                </div>
+
+            </ui:define>
+
+            <ui:define name="bottom">
+                Footer
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
